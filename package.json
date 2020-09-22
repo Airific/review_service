@@ -1,0 +1,25 @@
+{
+  "name": "review_service",
+  "version": "1.0.0",
+  "description": "Airbnb reviews service",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Airific/review_service.git"
+  },
+  "author": "alissa colascione",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Airific/review_service/issues"
+  },
+  "homepage": "https://github.com/Airific/review_service#readme",
+  "devDependencies": {
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+  }
+}
