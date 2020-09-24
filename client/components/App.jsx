@@ -8,11 +8,10 @@ class App extends Component {
       reviews: []
     };
     this.getReviewsById = this.getReviewsById.bind(this);
-    this.randomId = this.randomId.bind(this);
   }
 
   componentDidMount() {
-    const locId = this.randomId();
+    const locId = Math.floor(Math.random() * 100);
     this.getReviewsById(locId);
   }
 
@@ -20,22 +19,19 @@ class App extends Component {
     axios.get(`/listings/reviews/${id}`)
       .then((res) => {
         this.setState({
-          reviews: res.data
+          reviews: res.data,
         });
       })
       .catch(console.log);
   }
 
-  randomId() {
-    const id = Math.floor(Math.random() * 100);
-    console.log(id, "2");
-    return id;
-  }
-
   render() {
     // something
     return (
-    <div>Hello React is working!{this.state.reviews.length}</div>
+      <div>
+        <h1>Hello React is working!</h1>
+        <p>{this.state.reviews.length}</p>
+      </div>
     );
   }
 }
