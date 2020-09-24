@@ -47,8 +47,8 @@ for (let i = 0; i < 2000; i++) {
     text: faker.lorem.sentences(faker.random.number({ min: 2, max: 4 })),
     cleanliness: faker.random.number({ min: 1, max: 5 }),
     communication: faker.random.number({ min: 1, max: 5 }),
-    ccheck_in: faker.random.number({ min: 1, max: 5 }),
-    caccuracy: faker.random.number({ min: 1, max: 5 }),
+    check_in: faker.random.number({ min: 1, max: 5 }),
+    accuracy: faker.random.number({ min: 1, max: 5 }),
     location: faker.random.number({ min: 1, max: 5 }),
     value: faker.random.number({ min: 1, max: 5 }),
 
@@ -64,4 +64,10 @@ Review.insertMany(reviews)
     console.log('error inserting data: ', err);
   });
 
-module.exports = db;
+const getReviewsById = (id, callback) => {
+  Review.find({ loc_id: id }, callback);
+};
+
+module.exports = {
+  getReviewsById,
+};
