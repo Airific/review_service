@@ -7,17 +7,15 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/index.js"
+
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Airific/review_service.git"
   },
   "author": "alissa colascione",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Airific/review_service/issues"
-  },
   "homepage": "https://github.com/Airific/review_service#readme",
   "devDependencies": {
     "eslint": "^7.9.0",
@@ -25,7 +23,14 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react": "^7.21.1",
     "eslint-plugin-react-hooks": "^4.1.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^5.1.0",
+    "jest": "^26.4.2",
+    "mongoose": "^5.10.6",
+    "nodemon": "^2.0.4"
   }
 }
