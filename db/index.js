@@ -36,7 +36,6 @@ const reviewSchema = new mongoose.Schema({
 const Review = mongoose.model('Review', reviewSchema);
 
 const reviews = [];
-// text: faker.lorem.sentences(),
 // eslint-disable-next-line no-plusplus
 for (let i = 0; i < 2000; i++) {
   const fakeReview = new Review({
