@@ -37,7 +37,7 @@ const Review = mongoose.model('Review', reviewSchema);
 
 const reviews = [];
 // eslint-disable-next-line no-plusplus
-for (let i = 0; i < 2000; i++) {
+for (let i = 0; i < 1500; i++) {
   const fakeReview = new Review({
     loc_id: faker.random.number({ min: 1, max: 100 }),
     name: faker.name.firstName(),
