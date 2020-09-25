@@ -5,7 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: []
+      reviews: [],
     };
     this.getReviewsById = this.getReviewsById.bind(this);
   }
@@ -26,11 +26,11 @@ class App extends Component {
   }
 
   render() {
-    // something
+    const { reviews } = this.state;
     return (
       <div>
         <h1>Hello React is working!</h1>
-        <p>{this.state.reviews.length}</p>
+        <p>{reviews.length}</p>
       </div>
     );
   }
