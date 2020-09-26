@@ -1,0 +1,27 @@
+import React from 'react';
+import { shallow } from 'enzyme';
+import ReviewList from '../components/ReviewList';
+//import Adapter from 'enzyme-adapter-react-16';
+const mockReviews = [
+  {
+    name: 'test',
+    date: 'May',
+    photo: 'https://airific-review-images.s3.us-east-2.amazonaws.com/image20.jpg',
+    text: 'Hello!',
+  },
+];
+describe('ReviewList component', () => {
+  test('renders', () => {
+    const wrapper = shallow(<ReviewList reviews={mockReviews} />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+  test('return default empty array when there is no data to map through', () => {
+    const wrapper = shallow(<ReviewList />);
+    expect(wrapper).toMatchSnapshot();
+  });
+  test('doest break with reviews', () => {
+    const wrapper = shallow(<ReviewList />);
+    expect(wrapper.find('li')).toHaveLength(0);
+  });
+});

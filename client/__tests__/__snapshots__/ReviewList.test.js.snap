@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewList component renders 1`] = `
+<ul>
+  <Review
+    review={
+      Object {
+        "date": "May",
+        "name": "test",
+        "photo": "https://airific-review-images.s3.us-east-2.amazonaws.com/image20.jpg",
+        "text": "Hello!",
+      }
+    }
+  />
+</ul>
+`;
+
+exports[`ReviewList component return default empty array when there is no data to map through 1`] = `<ul />`;
