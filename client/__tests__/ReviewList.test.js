@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReviewList from '../components/ReviewList';
-//import Adapter from 'enzyme-adapter-react-16';
+
 const mockReviews = [
   {
     name: 'test',
@@ -20,8 +20,12 @@ describe('ReviewList component', () => {
     const wrapper = shallow(<ReviewList />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('doest break with reviews', () => {
+  test('does not break without reviews', () => {
     const wrapper = shallow(<ReviewList />);
     expect(wrapper.find('li')).toHaveLength(0);
   });
+  test('does not break with an empty array', () => {
+    const wrapper = shallow(<ReviewList reviews={[]} />);
+    expect(wrapper.find('li')).toHaveLength(0);
+  })
 });
