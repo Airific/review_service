@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import ReviewList from './ReviewList.jsx';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -18,8 +20,9 @@ class App extends Component {
   getReviewsById(id) {
     axios.get(`/listings/reviews/${id}`)
       .then((res) => {
+        const reviews = res.data;
         this.setState({
-          reviews: res.data,
+          reviews,
         });
       })
       .catch(console.log);
@@ -29,8 +32,8 @@ class App extends Component {
     const { reviews } = this.state;
     return (
       <div>
-        <h1>Hello React is working!</h1>
         <p>{reviews.length}</p>
+        <ReviewList reviews={reviews} />
       </div>
     );
   }
