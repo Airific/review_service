@@ -18,7 +18,7 @@ const ReviewStyle = Styled.div`
 const Top = Styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr  auto;
-  grid-template-rows: 1fr 1fr autp;
+
 `;
 
 const ReviewName = Styled.p`
