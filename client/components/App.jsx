@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Styled from 'styled-components';
 
+// eslint-disable-next-line import/extensions
 import ReviewList from './ReviewList.jsx';
+
+const Container = Styled.div`
+  dislay: flex;
+  background-color: #fff;
+  max-width: 1200px;
+  margin-left: 50px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+`;
 
 class App extends Component {
   constructor(props) {
@@ -31,10 +43,9 @@ class App extends Component {
   render() {
     const { reviews } = this.state;
     return (
-      <div>
-        <p>{reviews.length}</p>
+      <Container>
         <ReviewList reviews={reviews} />
-      </div>
+      </Container>
     );
   }
 }

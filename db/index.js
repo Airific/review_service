@@ -43,7 +43,7 @@ for (let i = 0; i < 1500; i++) {
     name: faker.name.firstName(),
     photo: faker.random.arrayElement(images),
     date: faker.date.month(),
-    text: faker.lorem.sentences(faker.random.number({ min: 2, max: 4 })),
+    text: faker.lorem.sentences(faker.random.number({ min: 3, max: 4 })),
     cleanliness: faker.random.number({ min: 1, max: 5 }),
     communication: faker.random.number({ min: 1, max: 5 }),
     check_in: faker.random.number({ min: 1, max: 5 }),
