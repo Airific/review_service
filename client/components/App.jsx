@@ -1,9 +1,11 @@
+/* eslint-disable import/extensions */
 import React, { Component } from 'react';
 import axios from 'axios';
 import Styled from 'styled-components';
 
 // eslint-disable-next-line import/extensions
 import ReviewList from './ReviewList.jsx';
+import Ratings from './Ratings.jsx';
 
 const Container = Styled.div`
   dislay: flex;
@@ -44,6 +46,7 @@ class App extends Component {
     const { reviews } = this.state;
     return (
       <Container>
+        <Ratings reviews={reviews} />
         <ReviewList reviews={reviews} />
       </Container>
     );
