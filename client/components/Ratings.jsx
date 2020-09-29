@@ -74,7 +74,7 @@ const Ratings = (props) => {
           Cleanliness
           <BarCont>
             <Bar width="150px" color="rgb(211,211,211)" />
-            <Bar width={`${(findAvg('cleanliness') / 5) * 175}px`} color="black" />
+            <Bar width={`${(findAvg('cleanliness') / 5) * 150}px`} color="black" />
           </BarCont>
           <Span>{findAvg('cleanliness')}</Span>
         </Wrapper2>
