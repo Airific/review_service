@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import Styled from 'styled-components';
 
 const ButtonCon = Styled.button`
@@ -12,22 +13,21 @@ const ButtonCon = Styled.button`
   border: 1px solid rgb(34, 34, 34);
   outline: none;
   padding: 13px 23px;
-  transition: box-shadow 0.2s ease 0s;
+  &:hover {
+
+    background-color:rgba(0, 0, 0, 0.1);
+  }
   background-color: rgb(255, 255, 255);
   color: rgb(34, 34, 34);
   font-weight: 600;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  touch-action: manipulation;
   width: auto;
   margin: 0px;
 `;
 
 const Button = ({ reviews }) => (
-  <ButtonCon>
-    Show all
-    {reviews.length}
-    reviews
-  </ButtonCon>
+  // eslint-disable-next-line react/jsx-one-expression-per-line
+  <ButtonCon>Show all {reviews.length} reviews</ButtonCon>
 );
 
 export default Button;
