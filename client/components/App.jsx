@@ -13,7 +13,7 @@ import Button from './Button.jsx';
 const Container = Styled.div`
   background-color: #fff;
   max-width: 1200px;
-  margin-left: 100px;
+  margin-left: 90px;
   padding-top: 48px;
   padding-bottom: 48px;
 
