@@ -7,7 +7,7 @@ const Grid = styled.div`
   flex-flow: row wrap;
   justify-content: space-evenly;
   padding-top: 32px;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
 `;
 
 const Rating = styled.div`

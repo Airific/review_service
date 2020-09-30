@@ -61,26 +61,22 @@ class App extends Component {
     const { reviews } = this.state;
     const findAvg = (item) => {
       const numbers2 = reviews.map((review) => review[item]);
-      console.log('numbers', numbers2)
+      console.log('numbers', numbers2);
       const avgs2 = avg(numbers2);
       const ratings = avgs2.toFixed(1);
-      console.log('rating', ratings)
+      console.log('rating', ratings);
       return ratings;
-    }
+    };
 
     const communication = findAvg('communication');
-    console.log(this.state.reviews, "reviews")
-    console.log('comm', communication);
     const location = findAvg('location');
     const clean = findAvg('cleanliness');
     const accuracy = findAvg('accuracy');
     const value = findAvg('value');
     const check = findAvg('check_in');
-    const totalNum = (Number(communication) + Number(location) + Number(clean) + Number(accuracy) + Number(value) + Number(check)) / 6;
-
+    const totalNum = (Number(communication) + Number(location) + Number(clean)
+     + Number(accuracy) + Number(value) + Number(check)) / 6;
     const total = totalNum.toFixed(2);
-    console.log(total,'***')
-    console.log(totalNum ,'***')
     this.setState({
       rating: {
         communication,
@@ -91,7 +87,7 @@ class App extends Component {
         check,
         total,
       },
-    })
+    });
   }
 
   render() {
