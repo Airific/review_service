@@ -25,15 +25,13 @@ class App extends Component {
     this.state = {
       reviews: [],
       rating: {
-        rating: {
-          communication: '',
-          location: '',
-          clean: '',
-          accuracy: '',
-          value: '',
-          check: '',
-          total: '',
-        },
+        communication: '',
+        location: '',
+        clean: '',
+        accuracy: '',
+        value: '',
+        check: '',
+        total: '',
       },
     };
     this.getReviewsById = this.getReviewsById.bind(this);
@@ -91,10 +89,15 @@ class App extends Component {
   }
 
   render() {
+    const fake = {
+      rating: {
+        total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
+      },
+    };
     const { reviews, rating } = this.state;
     return (
       <Container>
-        <Header reviews={reviews} rating={rating} />
+        <Header reviews={reviews} rating={rating || fake} />
         <Ratings rating={rating} />
         <ReviewList reviews={reviews} />
         <Button reviews={reviews} />
