@@ -12,7 +12,7 @@ const Grid = Styled.span`
   display: grid;
   grid-template-columns: 1.5fr auto 6fr;
   width: 300px;
-  margin-left: 60px;
+  margin-left: 40px;
   align-items: center;
   justify-items: center;
   line-height: 30px;

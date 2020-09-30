@@ -13,7 +13,7 @@ const Container = Styled.div`
   dislay: flex;
   background-color: #fff;
   max-width: 1200px;
-  margin-left: 50px;
+  margin-left: 40px;
   padding-top: 48px;
   padding-bottom: 48px;
 
