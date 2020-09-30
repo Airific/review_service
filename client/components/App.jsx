@@ -6,6 +6,8 @@ import Styled from 'styled-components';
 // eslint-disable-next-line import/extensions
 import ReviewList from './ReviewList.jsx';
 import Ratings from './Ratings.jsx';
+import Header from './Header.jsx';
+import avg from '../helpers/avg';
 
 const Container = Styled.div`
   dislay: flex;
@@ -22,8 +24,20 @@ class App extends Component {
     super(props);
     this.state = {
       reviews: [],
+      rating: {
+        rating: {
+          communication: '',
+          location: '',
+          clean: '',
+          accuracy: '',
+          value: '',
+          check: '',
+          total: '',
+        },
+      },
     };
     this.getReviewsById = this.getReviewsById.bind(this);
+    this.getRating = this.getRating.bind(this);
   }
 
   componentDidMount() {
@@ -38,15 +52,54 @@ class App extends Component {
         this.setState({
           reviews,
         });
+        this.getRating();
       })
       .catch(console.log);
   }
 
-  render() {
+  getRating() {
     const { reviews } = this.state;
+    const findAvg = (item) => {
+      const numbers2 = reviews.map((review) => review[item]);
+      console.log('numbers', numbers2)
+      const avgs2 = avg(numbers2);
+      const ratings = avgs2.toFixed(1);
+      console.log('rating', ratings)
+      return ratings;
+    }
+
+    const communication = findAvg('communication');
+    console.log(this.state.reviews, "reviews")
+    console.log('comm', communication);
+    const location = findAvg('location');
+    const clean = findAvg('cleanliness');
+    const accuracy = findAvg('accuracy');
+    const value = findAvg('value');
+    const check = findAvg('check_in');
+    const totalNum = (Number(communication) + Number(location) + Number(clean) + Number(accuracy) + Number(value) + Number(check)) / 6;
+
+    const total = totalNum.toFixed(2);
+    console.log(total,'***')
+    console.log(totalNum ,'***')
+    this.setState({
+      rating: {
+        communication,
+        location,
+        clean,
+        accuracy,
+        value,
+        check,
+        total,
+      },
+    })
+  }
+
+  render() {
+    const { reviews, rating } = this.state;
     return (
       <Container>
-        <Ratings reviews={reviews} />
+        <Header reviews={reviews} rating={rating} />
+        <Ratings rating={rating} />
         <ReviewList reviews={reviews} />
       </Container>
     );
