@@ -90,9 +90,7 @@ class App extends Component {
 
   render() {
     const fake = {
-      rating: {
-        total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
-      },
+      total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
     };
     const { reviews, rating } = this.state;
     return (
