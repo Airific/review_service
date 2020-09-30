@@ -15,7 +15,7 @@ const ListGrid = Styled.div`
 
 const Nested = Styled.div`
   width: 450px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 
 `;
 

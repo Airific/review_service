@@ -8,6 +8,7 @@ import ReviewList from './ReviewList.jsx';
 import Ratings from './Ratings.jsx';
 import Header from './Header.jsx';
 import avg from '../helpers/avg';
+import Button from './Button.jsx';
 
 const Container = Styled.div`
   background-color: #fff;
@@ -96,6 +97,7 @@ class App extends Component {
         <Header reviews={reviews} rating={rating} />
         <Ratings rating={rating} />
         <ReviewList reviews={reviews} />
+        <Button reviews={reviews} />
       </Container>
     );
   }
