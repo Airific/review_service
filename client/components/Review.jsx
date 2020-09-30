@@ -5,9 +5,7 @@ import Styled from 'styled-components';
 const ImageContainer = Styled.img`
   width: 56px;
   height: 56px;
-
   border-radius: 50%;
-
 `;
 
 const ReviewStyle = Styled.div`
@@ -15,10 +13,10 @@ const ReviewStyle = Styled.div`
   flex-wrap: wrap;
   font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
 `;
+
 const Top = Styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr  auto;
-
 `;
 
 const ReviewName = Styled.p`
@@ -30,8 +28,6 @@ const ReviewName = Styled.p`
   font-size: 16px;
   line-height: 20px;
   margin-left: 12px;
-
-
 `;
 
 const ReviewText = Styled.p`
@@ -45,15 +41,13 @@ const ReviewText = Styled.p`
   line-height: 24px;
   flex-direction: row;
   margin-top: 0px;
-
-
 `;
+
 const Date = Styled.div`
 color: rgb(113, 113, 113);
 font-weight: 400;
 font-size: 14px;
 line-height: 20px;
-
 `;
 
 const Review = ({ review }) => (

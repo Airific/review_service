@@ -10,10 +10,9 @@ import Header from './Header.jsx';
 import avg from '../helpers/avg';
 
 const Container = Styled.div`
-  dislay: flex;
   background-color: #fff;
   max-width: 1200px;
-  margin-left: 40px;
+  margin-left: 100px;
   padding-top: 48px;
   padding-bottom: 48px;
 

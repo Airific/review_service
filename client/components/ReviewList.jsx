@@ -6,15 +6,15 @@ import Styled from 'styled-components';
 import Review from './Review.jsx';
 
 const ListGrid = Styled.div`
-  display: flex;
-  flex-flow: row wrap;
-
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: start;
 
 `;
 
 const Nested = Styled.div`
-  width: 470px;
+  width: 450px;
   margin-bottom: 20px;
 
 `;

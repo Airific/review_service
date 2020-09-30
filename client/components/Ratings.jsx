@@ -6,18 +6,14 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  flex-flow: row wrap;
-  justify-items: center;
-  align-items: center;
+  justify-items: start;
+  align-items: start;
   padding-top: 32px;
   padding-bottom: 20px;
 `;
 
 const Rating = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 500px;
+  width: 480px;
   color: #222222;
   font-weight: 400px;
   font-size: 16px;
@@ -42,8 +38,6 @@ const BarCont = styled.div`
   align-self: center;
   position: relative;
   margin-top: 1px;
-
-
 `;
 
 const Span = styled.div`
@@ -54,16 +48,13 @@ const Span = styled.div`
  font-size: 12px;
  line-height: 16px;
  padding-top: 3px;
-
  width: 50px;
-
  `;
 
 const Wrapper2 = styled.div`
   display: grid;
   grid-template-columns: 5fr 2fr 1fr;
-  width: 500px;
-
+  width: 480px;
 `;
 
 const Ratings = ({ rating }) => (
