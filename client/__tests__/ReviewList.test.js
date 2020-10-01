@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { shallow } from 'enzyme';
 import ReviewList from '../components/ReviewList';
@@ -27,5 +29,5 @@ describe('ReviewList component', () => {
   test('does not break with an empty array', () => {
     const wrapper = shallow(<ReviewList reviews={[]} />);
     expect(wrapper.find('li')).toHaveLength(0);
-  })
+  });
 });
