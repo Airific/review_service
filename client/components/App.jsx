@@ -17,7 +17,7 @@ const Container = Styled.div`
   margin-left: 90px;
   padding-top: 48px;
   padding-bottom: 48px;
-
+  position: relative;
 `;
 
 class App extends Component {
@@ -39,6 +39,7 @@ class App extends Component {
     this.getReviewsById = this.getReviewsById.bind(this);
     this.getRating = this.getRating.bind(this);
     this.handleClick = this.handleClick.bind(this);
+
   }
 
   componentDidMount() {
@@ -91,7 +92,8 @@ class App extends Component {
     });
   }
 
-  handleClick() {
+  handleClick(e) {
+    e.preventDefault();
     const { clicked } = this.state;
     console.log('state', clicked);
     this.setState({
@@ -109,8 +111,9 @@ class App extends Component {
         <Header reviews={reviews} rating={rating || fake} />
         <Ratings rating={rating} />
         <ReviewList reviews={reviews} />
+        <Modal isOpen={clicked} handleClick={this.handleClick} />
         <Button reviews={reviews} handleClick={this.handleClick} />
-        <Modal isOpen={clicked} />
+
       </Container>
     );
   }
