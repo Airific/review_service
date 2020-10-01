@@ -9,6 +9,7 @@ import Ratings from './Ratings.jsx';
 import Header from './Header.jsx';
 import avg from '../helpers/avg';
 import Button from './Button.jsx';
+import Modal from './Modal.jsx';
 
 const Container = Styled.div`
   background-color: #fff;
@@ -33,9 +34,11 @@ class App extends Component {
         check: '',
         total: '',
       },
+      clicked: false,
     };
     this.getReviewsById = this.getReviewsById.bind(this);
     this.getRating = this.getRating.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -88,17 +91,26 @@ class App extends Component {
     });
   }
 
+  handleClick() {
+    const { clicked } = this.state;
+    console.log('state', clicked);
+    this.setState({
+      clicked: !clicked,
+    });
+  }
+
   render() {
     const fake = {
       total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
     };
-    const { reviews, rating } = this.state;
+    const { reviews, rating, clicked } = this.state;
     return (
       <Container>
         <Header reviews={reviews} rating={rating || fake} />
         <Ratings rating={rating} />
         <ReviewList reviews={reviews} />
-        <Button reviews={reviews} />
+        <Button reviews={reviews} handleClick={this.handleClick} />
+        <Modal isOpen={clicked} />
       </Container>
     );
   }

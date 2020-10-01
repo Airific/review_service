@@ -25,9 +25,9 @@ const ButtonCon = Styled.button`
   margin: 0px;
 `;
 
-const Button = ({ reviews }) => (
+const Button = ({ reviews, handleClick }) => (
   // eslint-disable-next-line react/jsx-one-expression-per-line
-  <ButtonCon>Show all {reviews.length} reviews</ButtonCon>
+  <ButtonCon onClick={handleClick}>Show all {reviews.length} reviews</ButtonCon>
 );
 
 export default Button;

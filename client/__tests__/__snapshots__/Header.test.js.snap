@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component render correctly Header component 1`] = `
+<styled.span>
+  <styled.span>
+    ★
+  </styled.span>
+  <styled.div>
+    3.45 (3 reviews)
+  </styled.div>
+</styled.span>
+`;
