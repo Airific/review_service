@@ -3,9 +3,11 @@ import React from 'react';
 import Styled from 'styled-components';
 
 const Star = Styled.span`
-  font-size: 21px;
+
+  font-size: ${(props) => (props.isOpen ? '27px' : '21px' )};
   color: rgb(255, 56, 92);
   width: 20px;
+  margin-right: ${(props) => (props.isOpen ? '10px' : '0px' )};
 `;
 
 const Grid = Styled.span`
@@ -20,17 +22,19 @@ const Average = Styled.div`
   grid-column-start: 2 / span2;
   font-weight: 500;
   padding-left: 3px;
+
+  font-size: ${(props) => (props.isOpen ? '32px' : '21px' )};
   color: #222222;
   background-color: #fff;
   letter-spacing: normal;
-  font-size: 21px;
+  /* font-size: 21px; */
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 `;
 
-const Header = ({ rating, reviews }) => (
+const Header = ({ rating, reviews, isOpen }) => (
   <Grid>
-    <Star>&#9733;</Star>
-    <Average>
+    <Star isOpen={isOpen} >&#9733;</Star>
+    <Average isOpen={isOpen}>
       {`${rating.total} (${reviews.length} reviews)`}
     </Average>
   </Grid>

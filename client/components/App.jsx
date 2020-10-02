@@ -17,7 +17,7 @@ const Container = Styled.div`
   margin-left: 90px;
   padding-top: 48px;
   padding-bottom: 48px;
-  position: relative;
+
 `;
 
 class App extends Component {
@@ -35,11 +35,12 @@ class App extends Component {
         total: '',
       },
       clicked: false,
+      isModalClicked: false,
     };
     this.getReviewsById = this.getReviewsById.bind(this);
     this.getRating = this.getRating.bind(this);
     this.handleClick = this.handleClick.bind(this);
-
+    this.handleOverlay = this.handleOverlayClick.bind(this);
   }
 
   componentDidMount() {
@@ -98,6 +99,15 @@ class App extends Component {
     console.log('state', clicked);
     this.setState({
       clicked: !clicked,
+      isModalClicked: true,
+    });
+  }
+
+  handleOverlayClick() {
+    const { clicked } = this.state;
+    console.log('is clicked');
+    this.setState({
+      clicked: !clicked,
     });
   }
 
@@ -105,13 +115,13 @@ class App extends Component {
     const fake = {
       total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
     };
-    const { reviews, rating, clicked } = this.state;
+    const { reviews, rating, clicked, isModalClicked } = this.state;
     return (
       <Container>
-        <Header reviews={reviews} rating={rating || fake} />
+        <Header reviews={reviews} rating={rating || fake} isClicked={clicked}/>
         <Ratings rating={rating} />
         <ReviewList reviews={reviews} />
-        <Modal isOpen={clicked} handleClick={this.handleClick} />
+        <Modal isOpen={clicked} handleClick={this.handleClick} rating={rating} reviews={reviews} isModalClicked={isModalClicked}  handleOverlay={this.handleOverlay} />
         <Button reviews={reviews} handleClick={this.handleClick} />
 
       </Container>
