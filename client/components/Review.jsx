@@ -59,6 +59,7 @@ font-weight: 600;
 line-height: 24px;
 text-decoration: underline;
 justify-content: flex-start;
+cursor: pointer;
 `;
 
 class Review extends React.Component {
