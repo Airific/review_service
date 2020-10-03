@@ -56,7 +56,6 @@ class App extends Component {
         total: '',
       },
       clicked: false,
-      isModalClicked: false,
     };
 
     this.getReviewsById = this.getReviewsById.bind(this);
@@ -121,7 +120,6 @@ class App extends Component {
     console.log('state', clicked);
     this.setState({
       clicked: !clicked,
-      isModalClicked: true,
     });
   }
 
