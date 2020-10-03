@@ -18,15 +18,11 @@ const Grid = Styled.span`
 `;
 
 const Average = Styled.div`
-
-
-font-family: 'Airbnb Cereal App Book', Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
-  font-weight: 500;
+  font-weight: 550;
   padding-left: 3px;
   font-size: ${(props) => (props.isOpen ? '32px' : '21px')};
   color: #222222;
   background-color: #fff;
-  /* letter-spacing: normal; */
 `;
 
 const Header = ({ rating, reviews, isOpen }) => (
