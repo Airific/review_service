@@ -61,7 +61,7 @@ class App extends Component {
     this.getReviewsById = this.getReviewsById.bind(this);
     this.getRating = this.getRating.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleOverlay = this.handleOverlayClick.bind(this);
+    this.handleOverlay = this.handleOverlay.bind(this);
   }
 
   componentDidMount() {
@@ -123,7 +123,7 @@ class App extends Component {
     });
   }
 
-  handleOverlayClick() {
+  handleOverlay() {
     const { clicked } = this.state;
     console.log('is clicked');
     this.setState({
