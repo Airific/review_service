@@ -18,7 +18,7 @@ const ModalCon = Styled.div`
   border: 1px solid #aaa;
   border-radius: 15px;
   position: fixed;
-  top: 23%;
+  top: 220px;
   left: 0;
   right: 0;
   padding-left: 24px;
@@ -114,7 +114,7 @@ const Content = Styled.div`
   flex-direction: columns;
   flex-wrap: wrap;
   width: 100%;
-  height: 490px;
+  height: 450px;
  `;
 
 const Grid = Styled.div`
