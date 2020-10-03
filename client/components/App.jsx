@@ -150,7 +150,7 @@ class App extends Component {
             isClicked={clicked}
           />
           <Ratings rating={rating} />
-          <ReviewList reviews={reviews} />
+          <ReviewList reviews={reviews} isClicked={clicked} />
           <Modal
             isOpen={clicked}
             handleClick={this.handleClick}

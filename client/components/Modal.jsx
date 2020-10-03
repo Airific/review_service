@@ -3,8 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import Styled, { keyframes } from 'styled-components';
-import ReviewList from './ReviewList.jsx';
+import Styled from 'styled-components';
 import Review from './Review.jsx';
 import Header from './Header.jsx';
 
@@ -137,7 +136,6 @@ const Rating = Styled.div`
   letter-spacing: normal;
   word-break: break-word;
   line-height: 16px;
-
 `;
 
 const Bar = Styled.div`
@@ -151,7 +149,6 @@ const Bar = Styled.div`
 const BarCont = Styled.div`
   align-self: center;
   position: relative;
-
 `;
 
 const Span = Styled.div`
@@ -163,7 +160,6 @@ const Span = Styled.div`
  line-height: 16px;
  padding-top: 3px;
  width: 50px;
-
  `;
 
 const Wrapper2 = Styled.div`
@@ -247,13 +243,11 @@ const ListGrid = Styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
 `;
 
 const Nested = Styled.div`
   width: 540px;
   margin-bottom: 15px;
-
 `;
 
 const Reviews = (props) => {
@@ -282,20 +276,16 @@ const Modal = (props) => {
     <div>
       {props.isOpen ? (
         <Window className={fade} isOpen={props.isOpen}>
-
           <ModalCon>
             <CloseDiv>
               <CloseButton type="button" onClick={props.handleClick}>
-
                 <CloseSvg viewBox="0 0 12 12" role="presentation" aria-hidden="true" focusable="false">
-                  <path d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z" fillRule="evenodd">
-                  </path>
+                  <path d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z" fillRule="evenodd" />
                 </CloseSvg>
               </CloseButton>
             </CloseDiv>
-            <Header isOpen={props.isOpen} rating={props.rating} reviews={props.reviews}/>
+            <Header isOpen={props.isOpen} rating={props.rating} reviews={props.reviews} />
             <Content>
-
               <Ratings rating={props.rating} />
               <Container3>
                 <Reviews reviews={props.reviews} />
@@ -307,7 +297,7 @@ const Modal = (props) => {
       )
         : null}
     </div>
-);
+  );
 };
 
 export default Modal;

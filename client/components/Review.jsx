@@ -11,7 +11,7 @@ const ImageContainer = Styled.img`
 const ReviewStyle = Styled.div`
   display: flex;
   flex-wrap: wrap;
-  font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
+
 `;
 
 const Top = Styled.div`
