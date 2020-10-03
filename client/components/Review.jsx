@@ -1,3 +1,5 @@
+/* eslint-disable prefer-template */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Styled from 'styled-components';
@@ -50,19 +52,62 @@ font-size: 14px;
 line-height: 20px;
 `;
 
-const Review = ({ review }) => (
-  <ReviewStyle>
-    <Top>
-      <ImageContainer src={`${review.photo}`} alt="" />
-      <ReviewName>
-        {review.name}
-        <Date>
-          {`${review.date} 2020`}
-        </Date>
-      </ReviewName>
-    </Top>
-    <ReviewText>{review.text}</ReviewText>
-  </ReviewStyle>
-);
+const ReadMore = Styled.div`
+display: flex;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+text-decoration: underline;
+justify-content: flex-start;
+`;
+
+class Review extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      readMore: props.review.text.length > 180,
+    };
+    this.handleRead = this.handleRead.bind(this);
+  }
+
+  handleRead() {
+    this.setState({
+      readMore: false,
+    });
+  }
+
+  render() {
+    return (
+      <ReviewStyle>
+        <Top>
+          <ImageContainer src={`${this.props.review.photo}`} alt="" />
+          <ReviewName>
+            {this.props.review.name}
+            <Date>
+              {`${this.props.review.date} 2020`}
+            </Date>
+          </ReviewName>
+        </Top>
+        <ReviewText>
+          <span>
+            {this.state.readMore
+              ? this.props.review.text.substring(0, 180) + '...'
+              : this.props.review.text}
+          </span>
+          {this.state.readMore ? (
+            <ReadMore
+              onClick={() => {
+                this.handleRead();
+              }}
+            >
+              Read more
+            </ReadMore>
+          ) : null}
+        </ReviewText>
+
+      </ReviewStyle>
+    );
+  }
+}
 
 export default Review;
