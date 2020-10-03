@@ -1,14 +1,15 @@
+/* eslint-disable import/extensions */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Styled, { keyframes } from 'styled-components';
-//import Ratings from './Ratings.jsx';
 import ReviewList from './ReviewList.jsx';
 import Review from './Review.jsx';
 import Header from './Header.jsx';
 
 const ModalCon = Styled.div`
-max-width: 1000px;
-font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
+  max-width: 1000px;
   width: 100%;
   margin: auto;
   display: flex;
@@ -67,10 +68,10 @@ const Window = Styled.div`
   }
 `;
 
-export const Overlay = Styled.div`
+const Overlay = Styled.div`
   background-color: #333;
   height: 175vh;
-   opacity: .6;
+  opacity: .6;
   width: 100%;
 `;
 
@@ -133,7 +134,6 @@ const Rating = Styled.div`
   color: #222222;
   font-weight: 300px;
   font-size: 14px;
-  font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
   word-break: break-word;
   line-height: 16px;
@@ -151,7 +151,7 @@ const Bar = Styled.div`
 const BarCont = Styled.div`
   align-self: center;
   position: relative;
-  margin-top: 1px;
+
 `;
 
 const Span = Styled.div`
@@ -278,37 +278,36 @@ const Modal = (props) => {
   } else {
     fade = 'slideOut';
   }
- return (
-  <div>
-    {props.isOpen ? (
-      <Window className={fade} isOpen={props.isOpen}>
+  return (
+    <div>
+      {props.isOpen ? (
+        <Window className={fade} isOpen={props.isOpen}>
 
-         <ModalCon>
-          <CloseDiv>
-            <CloseButton type="button" onClick={props.handleClick}>
+          <ModalCon>
+            <CloseDiv>
+              <CloseButton type="button" onClick={props.handleClick}>
 
-              <CloseSvg viewBox="0 0 12 12" role="presentation" aria-hidden="true" focusable="false">
-                <path d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z" fillRule="evenodd">
-                </path>
-              </CloseSvg>
-            </CloseButton>
-          </CloseDiv>
-           <Header isOpen={props.isOpen} rating={props.rating} reviews={props.reviews}/>
-           <Content>
+                <CloseSvg viewBox="0 0 12 12" role="presentation" aria-hidden="true" focusable="false">
+                  <path d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z" fillRule="evenodd">
+                  </path>
+                </CloseSvg>
+              </CloseButton>
+            </CloseDiv>
+            <Header isOpen={props.isOpen} rating={props.rating} reviews={props.reviews}/>
+            <Content>
 
-          <Ratings rating={props.rating} />
-          <Container3>
-          <Reviews reviews={props.reviews} />
-          </Container3>
-          </Content>
+              <Ratings rating={props.rating} />
+              <Container3>
+                <Reviews reviews={props.reviews} />
+              </Container3>
+            </Content>
           </ModalCon>
           <Overlay onClick={() => { props.handleOverlay(); }} />
-      </Window>
-    )
-      : null}
-  </div>
-
-)
-}
+        </Window>
+      )
+        : null}
+    </div>
+);
+};
 
 export default Modal;

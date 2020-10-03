@@ -12,12 +12,33 @@ import Button from './Button.jsx';
 import Modal from './Modal.jsx';
 
 const Container = Styled.div`
+  max-width: 1220px;
+  height: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
   background-color: #fff;
-  max-width: 1200px;
-  margin-left: 90px;
-  padding-top: 48px;
-  padding-bottom: 48px;
+ `;
 
+const Content = Styled.div`
+  padding-top: 25px;
+  width: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px;
+  color: #222222 !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+
+  @media screen and (min-width: 1128px) {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+  @media screen and (min-width: 950px) {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
 `;
 
 class App extends Component {
@@ -37,6 +58,7 @@ class App extends Component {
       clicked: false,
       isModalClicked: false,
     };
+
     this.getReviewsById = this.getReviewsById.bind(this);
     this.getRating = this.getRating.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -115,16 +137,35 @@ class App extends Component {
     const fake = {
       total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
     };
-    const { reviews, rating, clicked, isModalClicked } = this.state;
+    const {
+      reviews, rating, clicked, isModalClicked,
+    } = this.state;
     return (
-      <Container>
-        <Header reviews={reviews} rating={rating || fake} isClicked={clicked}/>
-        <Ratings rating={rating} />
-        <ReviewList reviews={reviews} />
-        <Modal isOpen={clicked} handleClick={this.handleClick} rating={rating} reviews={reviews} isModalClicked={isModalClicked}  handleOverlay={this.handleOverlay} />
-        <Button reviews={reviews} handleClick={this.handleClick} />
 
+      <Container>
+        <Content>
+          <Header
+            reviews={reviews}
+            rating={rating || fake}
+            isClicked={clicked}
+          />
+          <Ratings rating={rating} />
+          <ReviewList reviews={reviews} />
+          <Modal
+            isOpen={clicked}
+            handleClick={this.handleClick}
+            rating={rating}
+            reviews={reviews}
+            isModalClicked={isModalClicked}
+            handleOverlay={this.handleOverlay}
+          />
+          <Button
+            reviews={reviews}
+            handleClick={this.handleClick}
+          />
+        </Content>
       </Container>
+
     );
   }
 }

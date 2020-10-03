@@ -17,6 +17,7 @@ const ButtonCon = Styled.button`
 
     background-color:rgba(0, 0, 0, 0.1);
   }
+
   background-color: rgb(255, 255, 255);
   color: rgb(34, 34, 34);
   font-weight: 600;

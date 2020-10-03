@@ -6,17 +6,25 @@ import Styled from 'styled-components';
 import Review from './Review.jsx';
 
 const ListGrid = Styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-items: start;
-
+  padding-top: 48px;
+    padding-bottom: 20px;
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+    width: calc(100% + 16px) !important;
+    width: 1120px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
 `;
 
 const Nested = Styled.div`
-  width: 450px;
-  margin-bottom: 15px;
-
+  width: 457px;
+  margin-bottom: 30px;
+  margin-right: 8.33333% !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
 `;
 
 const ReviewList = ({ reviews = [] }) => {
