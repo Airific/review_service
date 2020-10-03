@@ -6,31 +6,50 @@ import Styled from 'styled-components';
 import Review from './Review.jsx';
 
 const ListGrid = Styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-items: start;
+  padding-top: 48px;
+    padding-bottom: 20px;
+    margin-left: -8px !important;
+    margin-right: -8px !important;
+    width: calc(100% + 16px) !important;
+    width: 1120px;
+    /* width: ${(props) => (props.isClicked ? '500px' : '1120px')}; */
+    display: flex !important;
+    /* flex-direction: ${(props) => (props.isClicked ? 'column' : 'row')}; */
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
 
 `;
+// const Container3 = Styled.div`
+//   overflow: ${(props) => (props.isClicked ? 'auto' : 'none')};
+//   height: 100%;
+
+// `;
 
 const Nested = Styled.div`
-  width: 450px;
-  margin-bottom: 15px;
-
+  width: 457px;
+  /* width: ${(props) => (props.isClicked ? '540px' : '457px')}; */
+  margin-bottom: 30px;
+  margin-right: 8.33333% !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
 `;
 
 const ReviewList = ({ reviews = [] }) => {
   const list = reviews.slice(0, 6).map(
     (review) => (
       <Nested>
-        <Review review={review} key={review._id} />
+        <Review review={review} />
       </Nested>
     ),
   );
   return (
+
     <ListGrid>
       {list}
     </ListGrid>
+
   );
 };
 

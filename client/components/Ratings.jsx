@@ -3,13 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  justify-items: start;
-  align-items: start;
+  width: 1120px;
+  display: flex !important;
+  flex-direction: row;
+  align-items: stretch;
+  flex-wrap: wrap !important;
   padding-top: 32px;
-  padding-bottom: 20px;
+  gap: 12px;
 `;
 
 const Rating = styled.div`
@@ -17,13 +17,14 @@ const Rating = styled.div`
   color: #222222;
   font-weight: 400px;
   font-size: 16px;
-  font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
   align-self: center;
   align-items: center;
   justify-items: center;
   line-height: 20px;
-  height: 35px;
+  height: 22px;
+  width: 457px;
+  margin-right: 8.6% !important;
 `;
 
 const Bar = styled.div`
@@ -49,12 +50,14 @@ const Span = styled.div`
  line-height: 16px;
  padding-top: 3px;
  width: 50px;
+
  `;
 
 const Wrapper2 = styled.div`
   display: grid;
   grid-template-columns: 5fr 2fr 1fr;
-  width: 480px;
+  width: 458px;
+
 `;
 
 const Ratings = ({ rating }) => (
