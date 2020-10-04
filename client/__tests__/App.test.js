@@ -22,4 +22,3 @@ describe('App', () => {
     expect(wrapper.state().clicked).toEqual(false);
   });
 });
-

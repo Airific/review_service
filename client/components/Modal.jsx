@@ -18,16 +18,17 @@ const ModalCon = Styled.div`
   border: 1px solid #aaa;
   border-radius: 15px;
   position: fixed;
-  top: 23%;
+  top: 50px;
   left: 0;
   right: 0;
   padding-left: 24px;
   color: #484848;
   z-index: 1;
+
 `;
 
 const Window = Styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 2000;
   top: 0;
@@ -73,7 +74,6 @@ const Overlay = Styled.div`
   opacity: .6;
   width: 100%;
 `;
-
 const CloseDiv = Styled.div`
   flex: 0 0 65px !important;
   position: sticky !important;
@@ -84,7 +84,7 @@ const CloseDiv = Styled.div`
   border-top-right-radius: 15px;
 `;
 
-const CloseButton = Styled.button`
+export const CloseButton = Styled.button`
   background-color: #fff;
   font-size: 13px;
   font-weight: 450px;
@@ -114,7 +114,7 @@ const Content = Styled.div`
   flex-direction: columns;
   flex-wrap: wrap;
   width: 100%;
-  height: 490px;
+  height: 500px;
  `;
 
 const Grid = Styled.div`
