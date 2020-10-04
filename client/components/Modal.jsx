@@ -84,7 +84,7 @@ const CloseDiv = Styled.div`
   border-top-right-radius: 15px;
 `;
 
-const CloseButton = Styled.button`
+export const CloseButton = Styled.button`
   background-color: #fff;
   font-size: 13px;
   font-weight: 450px;

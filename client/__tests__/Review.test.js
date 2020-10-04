@@ -18,8 +18,4 @@ describe('<Review />', () => {
   it('should render one review', () => {
     expect(wrapper).toExist();
   });
-
-  // it('should render the correct name', () => {
-  //   expect(wrapper.find('img').text()).toEqual('https://airific-review-images.s3.us-east-2.amazonaws.com/image20.jpg');
-  // });
 });

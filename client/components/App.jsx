@@ -136,7 +136,7 @@ class App extends Component {
       total: 0, communication: 0, location: 0, accuracy: 0, value: 0, check: 0, clean: 0,
     };
     const {
-      reviews, rating, clicked, isModalClicked,
+      reviews, rating, clicked,
     } = this.state;
     return (
 
@@ -154,7 +154,6 @@ class App extends Component {
             handleClick={this.handleClick}
             rating={rating}
             reviews={reviews}
-            isModalClicked={isModalClicked}
             handleOverlay={this.handleOverlay}
           />
           <Button
