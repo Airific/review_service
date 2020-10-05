@@ -5,7 +5,8 @@ const { getReviewsById } = require('../db/index.js');
 const app = express();
 const PORT = 3003;
 
-app.use(express.static(path.join(__dirname, '/../public')));
+
+app.use('/:id', express.static(path.join(__dirname, '/../public')));
 
 app.get('/listings/reviews/:id', (req, res) => {
   const { id } = req.params;

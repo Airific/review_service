@@ -69,8 +69,8 @@ class App extends Component {
     this.getReviewsById(locId);
   }
 
-  getReviewsById(id) {
-    axios.get(`/listings/reviews/${id}`)
+  getReviewsById() {
+    axios.get(`/listings/reviews${window.location.pathname}`)
       .then((res) => {
         const reviews = res.data;
         this.setState({
