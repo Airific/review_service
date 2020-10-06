@@ -10,7 +10,7 @@ const PORT = 3003;
 
 app.use('/:id', express.static(path.join(__dirname, '/../public')));
 
-app.get('http://localhost:3003/listings/reviews/:id', (req, res) => {
+app.get('/listings/reviews/:id', (req, res) => {
   const { id } = req.params;
   getReviewsById(id, (err, data) => {
     if (err) {

@@ -70,7 +70,7 @@ class App extends Component {
   }
 
   getReviewsById() {
-    axios.get(`/listings/reviews${window.location.pathname}`)
+    axios.get(`http://localhost:3003/listings/reviews${window.location.pathname}`)
       .then((res) => {
         const reviews = res.data;
         this.setState({
