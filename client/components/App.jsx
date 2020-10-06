@@ -12,6 +12,7 @@ import Button from './Button.jsx';
 import Modal from './Modal.jsx';
 
 const Container = Styled.div`
+
   max-width: 1220px;
   height: 100% !important;
   margin-left: auto !important;
@@ -21,9 +22,10 @@ const Container = Styled.div`
  `;
 
 const Content = Styled.div`
+
   padding-top: 25px;
   width: 100%;
-  margin-left: 0px !important;
+  margin-left: 5px !important;
   margin-right: 0px;
   color: #222222 !important;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
