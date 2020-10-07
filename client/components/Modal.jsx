@@ -70,7 +70,7 @@ const Window = Styled.div`
 
 const Overlay = Styled.div`
   background-color: #333;
-  height: 175vh;
+  height: 100vh;
   opacity: .6;
   width: 100%;
 `;
