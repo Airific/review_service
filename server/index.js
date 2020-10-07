@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const { getReviewsById } = require('../db/index.js');
 
 const app = express();
+app.use(cors());
 const PORT = 3003;
 
 

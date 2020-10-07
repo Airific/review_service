@@ -10,6 +10,7 @@ const Star = Styled.span`
 `;
 
 const Grid = Styled.span`
+
   display: grid;
   grid-template-columns: 1.5fr auto 6fr;
   width: 300px;

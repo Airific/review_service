@@ -76,7 +76,6 @@ const Overlay = Styled.div`
 `;
 const CloseDiv = Styled.div`
   flex: 0 0 65px !important;
-  position: sticky !important;
   text-align: left !important;
   z-index: 1;
   top: 0;
@@ -103,6 +102,7 @@ export const CloseButton = Styled.button`
 `;
 
 const CloseSvg = Styled.svg`
+position: sticky;
   height: 12px;
   width: 12px;
   display: block;
@@ -111,7 +111,7 @@ const CloseSvg = Styled.svg`
 
 const Content = Styled.div`
   display: flex;
-  flex-direction: columns;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   height: 500px;
