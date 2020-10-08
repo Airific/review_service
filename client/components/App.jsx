@@ -67,12 +67,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const locId = Math.floor(Math.random() * 100);
-    this.getReviewsById(locId);
+    this.getReviewsById();
   }
 
   getReviewsById() {
-    axios.get(`http://localhost:3003/listings/reviews${window.location.pathname}`)
+    axios.get(`/listings/reviews${window.location.pathname}`)
       .then((res) => {
         const reviews = res.data;
         this.setState({
