@@ -1,6 +1,6 @@
 FROM node:12.18.2
 
-RUN mkdir  /src/app
+RUN mkdir -p /src/app
 
 # Copy the current directory contents into the container at
 COPY . /src/app

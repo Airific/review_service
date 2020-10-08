@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const { images } = require('./images.js');
 
-mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true });
+mongoose.connect('mongodb://172.17.0.2/reviews', { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'Connection Error'));
