@@ -2,6 +2,7 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import Highlighter from 'react-highlight-words';
 import Styled from 'styled-components';
 
 const ImageContainer = Styled.img`
@@ -90,6 +91,13 @@ class Review extends React.Component {
           </ReviewName>
         </Top>
         <ReviewText>
+          {this.props.search ? (
+            <Highlighter
+              searchWords={[this.props.search]}
+              autoEscape
+              textToHighlight={this.props.review.text}
+            />
+          ) : null}
           <span>
             {this.state.readMore
               ? this.props.review.text.substring(0, 180) + '...'

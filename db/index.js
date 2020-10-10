@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const { images } = require('./images.js');
 
-mongoose.connect('mongodb://172.17.0.4:27017/reviews', { useNewUrlParser: true })
+// mongoose.connect('mongodb://172.17.0.4:27017/reviews', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/reviews', { useNewUrlParser: true })
   .then(() => {
     console.log('MongoDB is connected');
   })

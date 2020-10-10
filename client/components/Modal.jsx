@@ -6,6 +6,7 @@ import React from 'react';
 import Styled from 'styled-components';
 import Review from './Review.jsx';
 import Header from './Header.jsx';
+import Search from './Search.jsx';
 
 const ModalCon = Styled.div`
   max-width: 1000px;
@@ -254,7 +255,7 @@ const Reviews = (props) => {
   const list = props.reviews.map(
     (review) => (
       <Nested>
-        <Review review={review} key={review._id} />
+        <Review review={review} key={review._id} search={props.search} />
       </Nested>
     ),
   );
@@ -265,39 +266,97 @@ const Reviews = (props) => {
   );
 };
 
-const Modal = (props) => {
-  let fade = '';
-  if (props.isOpen) {
-    fade = 'slideIn';
-  } else {
-    fade = 'slideOut';
+const SearchCon = Styled.div`
+  margin-bottom: 30px;
+  width: 90%;
+`;
+
+class Modal extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      searchTerm: '',
+    };
+    this.handleSearch = this.handleSearch.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
-  return (
-    <div>
-      {props.isOpen ? (
-        <Window className={fade} isOpen={props.isOpen}>
-          <ModalCon>
-            <CloseDiv>
-              <CloseButton type="button" onClick={props.handleClick}>
-                <CloseSvg viewBox="0 0 12 12" role="presentation" aria-hidden="true" focusable="false">
-                  <path d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z" fillRule="evenodd" />
-                </CloseSvg>
-              </CloseButton>
-            </CloseDiv>
-            <Header isOpen={props.isOpen} rating={props.rating} reviews={props.reviews} />
-            <Content>
-              <Ratings rating={props.rating} />
-              <Container3>
-                <Reviews reviews={props.reviews} />
-              </Container3>
-            </Content>
-          </ModalCon>
-          <Overlay onClick={() => { props.handleOverlay(); }} />
-        </Window>
-      )
-        : null}
-    </div>
-  );
-};
+
+  handleSearch(input) {
+    this.setState({
+      searchTerm: input,
+    });
+  }
+
+  clearSearch() {
+    this.setState({
+      searchTerm: '',
+    });
+  }
+
+  render() {
+    let fade = '';
+    if (this.props.isOpen) {
+      fade = 'slideIn';
+    } else {
+      fade = 'slideOut';
+    }
+    const { searchTerm } = this.state;
+    const { reviews } = this.props;
+
+    let searchFiltered = reviews;
+    if (searchTerm) {
+      searchFiltered = [];
+
+      for (let i = 0; i < reviews.length; i += 1) {
+        const review = reviews[i];
+        if (review.text.toLowerCase().includes(searchTerm.toLowerCase())) {
+          searchFiltered.push(review);
+        }
+      }
+    }
+
+    return (
+      <div>
+        {this.props.isOpen ? (
+          <Window className={fade} isOpen={this.props.isOpen}>
+            <ModalCon>
+              <CloseDiv>
+                <CloseButton type="button" onClick={this.props.handleClick}>
+                  <CloseSvg viewBox="0 0 12 12" role="presentation" aria-hidden="true" focusable="false">
+                    <path d="m11.5 10.5c.3.3.3.8 0 1.1s-.8.3-1.1 0l-4.4-4.5-4.5 4.5c-.3.3-.8.3-1.1 0s-.3-.8 0-1.1l4.5-4.5-4.4-4.5c-.3-.3-.3-.8 0-1.1s.8-.3 1.1 0l4.4 4.5 4.5-4.5c.3-.3.8-.3 1.1 0s .3.8 0 1.1l-4.5 4.5z" fillRule="evenodd" />
+                  </CloseSvg>
+                </CloseButton>
+              </CloseDiv>
+              <Header
+                isOpen={this.props.isOpen}
+                rating={this.props.rating}
+                reviews={this.props.reviews}
+              />
+              <Content>
+                <Ratings rating={this.props.rating} />
+                <Container3>
+                  <SearchCon>
+                    <Search
+                      handleSearch={(input) => { this.handleSearch(input); }}
+                      clearSearch={this.clearSearch}
+                    />
+                  </SearchCon>
+
+                  <Reviews
+                    reviews={searchFiltered}
+                    search={searchTerm}
+                  />
+
+                </Container3>
+              </Content>
+            </ModalCon>
+            <Overlay onClick={() => { this.props.handleOverlay(); }} />
+          </Window>
+        )
+          : null}
+      </div>
+    );
+  }
+}
 
 export default Modal;
