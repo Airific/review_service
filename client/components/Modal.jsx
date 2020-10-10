@@ -327,12 +327,13 @@ class Modal extends React.Component {
                   </CloseSvg>
                 </CloseButton>
               </CloseDiv>
-              <Header
-                isOpen={this.props.isOpen}
-                rating={this.props.rating}
-                reviews={this.props.reviews}
-              />
+
               <Content>
+                <Header
+                  isOpen={this.props.isOpen}
+                  rating={this.props.rating}
+                  reviews={this.props.reviews}
+                />
                 <Ratings rating={this.props.rating} />
                 <Container3>
                   <SearchCon>
