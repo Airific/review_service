@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const { images } = require('./images.js');
 
-mongoose.connect('mongodb://172.17.0.2/reviews', { useNewUrlParser: true });
+mongoose.connect('mongodb://172.17.0.4:27017/reviews', { useNewUrlParser: true })
+  .then(() => {
+    console.log('MongoDB is connected');
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'Connection Error'));
-
-db.once('open', () => {
-  console.log('Successfully connected to MongoDB!');
-});
 
 db.dropCollection('reviews', (err) => {
   if (err) {
