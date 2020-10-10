@@ -25,6 +25,15 @@ const ModalCon = Styled.div`
   padding-left: 24px;
   color: #484848;
   z-index: 1;
+  @media (max-width: 1220px) {
+    width: calc(100% - 80px);
+  }
+  @media (max-width: 730px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+
 
 `;
 
@@ -249,6 +258,7 @@ const ListGrid = Styled.div`
 const Nested = Styled.div`
   width: 540px;
   margin-bottom: 15px;
+
 `;
 
 const Reviews = (props) => {
