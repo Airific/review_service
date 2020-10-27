@@ -16,12 +16,13 @@ const Grid = Styled.span`
   width: 300px;
   align-items: center;
   line-height: 30px;
+  margin-top: ${(props) => (props.isOpen ? '10px' : null)};
 `;
 
 const Average = Styled.div`
   font-weight: 550;
   padding-left: 3px;
-  font-size: ${(props) => (props.isOpen ? '32px' : '21px')};
+  font-size: ${(props) => (props.isOpen ? '31px' : '21px')};
   color: #222222;
   background-color: #fff;
 `;
